@@ -45,7 +45,7 @@ const Header = () => {
     <>
       <div
         style={{
-          borderBottom: "10px solid white",
+          borderBottom: "15px solid #D9D9D9",
         }}
         className="py-[40px] bg-[#6C757D] fixed w-full top-0  z-30 "
       >
