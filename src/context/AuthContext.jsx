@@ -10,6 +10,7 @@ import React, { createContext, useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { auth } from "../firebase";
 import { getUser } from "../redux/addProductsSlice";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const authContext = createContext();
 export const useAuth = () => useContext(authContext);
@@ -43,19 +44,20 @@ const AuthContext = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
-  //   let googleProvider = new GoogleAuthProvider();
-  //   async function signInWithGoogle() {
-  //     try {
-  //       return await signInWithPopup(auth, googleProvider);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   }
+  let googleProvider = new GoogleAuthProvider();
+  async function signInWithGoogle() {
+    try {
+      return await signInWithPopup(auth, googleProvider);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   let values = {
     register,
     logOut,
     logIn,
+    signInWithGoogle,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
