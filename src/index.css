@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+body {
+  background: rgba(33, 37, 41, 1);
+}
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.452);
+  top: 0;
+  left: 0;
+  z-index: 50;
+  /* backdrop-filter: blur(5px); */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
